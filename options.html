@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Staging Auto Login</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 360px; margin: 32px auto; padding: 0 16px; }
+    label { display: block; margin-top: 12px; font-size: 14px; }
+    input { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; }
+    button { margin-top: 16px; padding: 8px 16px; cursor: pointer; }
+    #status { margin-left: 8px; color: green; }
+  </style>
+</head>
+<body>
+  <h2>Login do staging</h2>
+  <label>Usuário <input id="user" autocomplete="off"></label>
+  <label>Senha <input id="pass" type="password" autocomplete="off"></label>
+  <button id="save">Salvar</button><span id="status"></span>
+  <script src="options.js"></script>
+</body>
+</html>

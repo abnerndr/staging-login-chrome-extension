@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Staging Auto Login",
+  "version": "1.0",
+  "description": "Preenche automaticamente o login (HTTP Basic Auth) do staging.",
+  "permissions": ["webRequest", "webRequestAuthProvider", "storage"],
+  "host_permissions": ["https://staging.mundozerokm.com.br/*"],
+  "background": { "service_worker": "background.js" },
+  "options_page": "options.html",
+  "action": { "default_title": "Abrir staging" }
+}
