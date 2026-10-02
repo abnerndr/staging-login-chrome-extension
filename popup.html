@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Staging Auto Login</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; width: 300px; margin: 0; padding: 16px; font-size: 13px; color: #111827; }
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    h1 { font-size: 15px; margin: 0; }
+    .badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 999px; }
+    .badge.on { background: #dcfce7; color: #166534; }
+    .badge.off { background: #f3f4f6; color: #4b5563; }
+    label { display: block; margin-bottom: 10px; font-weight: 500; }
+    input, select { width: 100%; padding: 7px 8px; margin-top: 4px; border: 1px solid #d1d5db; border-radius: 6px; font: inherit; }
+    input:focus, select:focus { outline: 2px solid #2563eb; outline-offset: -1px; border-color: transparent; }
+    button { width: 100%; padding: 8px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; cursor: pointer; }
+    button + button { margin-top: 8px; }
+    .primary { background: #2563eb; color: #fff; }
+    .primary:hover { background: #1d4ed8; }
+    .secondary { background: #f3f4f6; color: #111827; }
+    .secondary:hover { background: #e5e7eb; }
+    .danger { background: #fee2e2; color: #991b1b; }
+    .danger:hover { background: #fecaca; }
+    button:disabled { opacity: .6; cursor: default; }
+    .info { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; margin-bottom: 12px; line-height: 1.6; }
+    .info b { font-weight: 600; }
+    #error { color: #b91c1c; min-height: 16px; margin: 4px 0 8px; }
+    footer { margin-top: 14px; color: #9ca3af; font-size: 11px; text-align: center; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="appName">Staging Login</h1>
+    <span id="badge" class="badge off">Não autenticado</span>
+  </header>
+
+  <form id="loginView" hidden>
+    <label>Usuário <input id="user" autocomplete="off" required></label>
+    <label>Senha <input id="pass" type="password" autocomplete="off" required></label>
+    <label>Manter sessão por
+      <select id="duration">
+        <option value="1d">1 dia</option>
+        <option value="7d">7 dias</option>
+        <option value="forever">Permanecer conectado</option>
+      </select>
+    </label>
+    <div id="error"></div>
+    <button id="loginBtn" class="primary" type="submit">Entrar</button>
+  </form>
+
+  <div id="sessionView" hidden>
+    <div class="info">
+      <div>Usuário: <b id="sessUser"></b></div>
+      <div id="sessExpiry"></div>
+    </div>
+    <button id="openBtn" class="primary">Abrir staging</button>
+    <button id="resetBtn" class="danger">Resetar login</button>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Staging Auto Login",
+  "description": "Faz login automático (HTTP Basic Auth) no staging, com sessão de duração configurável.",
+  "version": "2.0.0",
+  "author": "Abner Ananias",
+  "icon": "assets/icon.png",
+  "site": "https://staging.mundozerokm.com.br"
+}
