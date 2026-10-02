@@ -1,16 +1,23 @@
 {
-	"manifest_version": 2,
-	"name": "Staging Auto Login",
-	"version": "2.0.0",
-	"description": "Faz login automático (HTTP Basic Auth) no staging, com sessão de duração configurável.",
-	"author": "Abner Ananias",
-	"permissions": ["declarativeNetRequestWithHostAccess", "storage", "alarms", "browsingData"],
-	"host_permissions": ["https://staging.mundozerokm.com.br/*"],
-	"background": {
-		"service_worker": "background.js"
-	},
-	"action": {
-		"default_title": "Staging Auto Login",
-		"default_popup": "popup.html"
-	}
+  "manifest_version": 3,
+  "name": "Staging Auto Login",
+  "version": "2.0.0",
+  "description": "Faz login automático (HTTP Basic Auth) no staging, com sessão de duração configurável.",
+  "author": "Abner Ananias",
+  "permissions": [
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "alarms",
+    "browsingData"
+  ],
+  "host_permissions": [
+    "https://staging.mundozerokm.com.br/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Staging Auto Login",
+    "default_popup": "popup.html"
+  }
 }
